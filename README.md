@@ -58,8 +58,8 @@ Follow the installation instructions below to installing **MySQL Community Serve
 ### # Run this project
 1. Clone this project
     * `$ cd desktop`
-    * `$ git clone https://github.com/jieunkang-101/HairSalon`
-    * `$ cd HairSalon`
+    * `$ git clone https://github.com/jieunkang-101/ClairesHairSalon`
+    * `$ cd ClairesHairSalon`
 2. Add Dependencies for **Entity Framework Core**    
     * `$ dotnet add package Microsoft.EntityFrameworkCore -v 2.2.0`
     * `$ dotnet add package Pomelo.EntityFrameworkCore.MySql -v 2.2.0`
