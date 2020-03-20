@@ -28,6 +28,33 @@ Follow the installation instructions below to installing **MySQL Community Serve
 3. Add the exact location of your MySQL installation, and click OK.
 4. Verity MySQL installation by opening terminal and entering the command: <br>`$ mysql -uroot -pYOURPASSWORD`
 
+### # Re-create the database
+#### Using MySQL:
+```
+> CREATE DATABASE `jieun_kang`;
+> USE `jieun_kang`; 
+> CREATE TABLE `clients` (
+  `ClientId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `PhoneNumber` varchar(255) DEFAULT NULL,
+  `EmailAddress` varchar(255) DEFAULT NULL,
+  `StylistId` int(11) DEFAULT '0',
+  PRIMARY KEY (`ClientId`));
+> CREATE TABLE `stylists` (
+  `StylistId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`StylistId`));
+```
+
+#### Import from the Cloned Repository
+1. Launch MySQL Workbench and open the _Navigator_ window.
+2. In the _Navigator > Administration_ window, select _Data Import/Restore_.
+3. In _Import Options_ select _Import from Self-Contained File_.
+4. Under _Default Schema to be Imported To_, select the _New_ button.
+    * Enter the name of database `jieun_kang`
+5. Click _Start Import_.    
+
 ### # Run this project
 1. Clone this project
     * `$ cd desktop`
