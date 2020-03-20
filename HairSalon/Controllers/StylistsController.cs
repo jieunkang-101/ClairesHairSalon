@@ -37,7 +37,7 @@ namespace HairSalon.Controllers
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      //thisStylist.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
+      thisStylist.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
       return View(thisStylist);
     }
 
@@ -52,20 +52,25 @@ namespace HairSalon.Controllers
     {
       _db.Entry(stylist).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = stylist.StylistId });
     }
 
     public ActionResult Delete(int id)
     {
-      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      return View(thisStylist);
+      Stylist stylistToDelete = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(stylistToDelete);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      _db.Stylists.Remove(thisStylist);
+      Stylist stylistToDelete = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      stylistToDelete.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
+      foreach (Client client in stylistToDelete.Clients)
+      {
+        _db.Clients.Remove(client);
+      }
+      _db.Stylists.Remove(stylistToDelete);
       _db.SaveChanges();
       return RedirectToAction("Index");
     } 
