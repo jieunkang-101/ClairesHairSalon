@@ -7,7 +7,7 @@
 ---
 
 ## Description
-An MVC application which lets a user manage stylists and clients for a hair salon.
+A MVC application which lets a user manage stylists and clients for a hair salon.
 
 
 ---
