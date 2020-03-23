@@ -1,3 +1,26 @@
+body {
+  background-color: rgba(219, 215, 208, 0.719);
+}
+
+.navbar {
+  background-color: rgb(141, 130, 115);
+}
+
+.jumbotron {
+  text-align: center;
+  font-size: larger;
+  background-color: rgb(184, 170, 152);
+}
+
+.card {
+  background-color: rgba(228, 216, 196, 0.719);
+}
 .form-control {
   margin-bottom: 20px;
 }
+
+.btn {
+  float: right;
+  margin-right: 20px;
+}
+

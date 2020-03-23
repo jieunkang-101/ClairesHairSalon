@@ -11,10 +11,10 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name, new { @class = "form-control"})
 
-  @Html.LabelFor(model => model.PhoneNumber)
+  @Html.Label("Phone Number")
   @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control"})
 
-  @Html.LabelFor(model => model.EmailAddress)
+  @Html.Label("Email Address")
   @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control"})
 
   @Html.LabelFor(model => model.Stylist)
@@ -22,7 +22,5 @@
   @Html.DropDownList("StylistId")
   <br>
   <br>
-  <input type="submit" value="Add" class="btn btn-primary" />
+  <input type="submit" value="Add" class="btn btn-dark" />
 }
-<br>
-<p>@Html.ActionLink("Show all clients", "Index")</p>
